@@ -1,0 +1,26 @@
+{
+  "download_date": "2026-10-12",
+  "bbox_wsen": [
+    76.34,
+    10.02,
+    76.35,
+    10.025
+  ],
+  "nodes": 1488,
+  "ways_total": 212,
+  "highway_ways": 100,
+  "oneway_tagged": 8,
+  "access_tagged": 0,
+  "restriction_relations": 0,
+  "missing_referenced_nodes": 0,
+  "named_roads": [
+    "Antony Joseph",
+    "Chirakkapady Road",
+    "Kollamkudy Mugal-Kakkanad Raod",
+    "Palarivattom - Kakkanad Road",
+    "Prince Nagar Road",
+    "Seaport Airport Road"
+  ],
+  "sha256": "8087b8aa7cdfd82c4090f243526557380a22c1d159f6a1b1b3408daaf31e5ddd",
+  "limitations": "Small sample; counts measure tag presence, not true coverage or legal access."
+}

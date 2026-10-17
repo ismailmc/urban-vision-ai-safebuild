@@ -1,0 +1,29 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Next.js & Node
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & Secrets
+.env
+.env.local
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Inspection temporary raster pages
+evidence/pdf_page-*.png
+
+# Exclude zip and duplicate research blueprint if large
+SafeBuild_Verified_Research_Pack(1).zip
+Urban_Vision_AI_SFIC_Engineering_Blueprint_v4(1).md

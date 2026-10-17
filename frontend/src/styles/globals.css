@@ -1,0 +1,62 @@
+@import 'maplibre-gl/dist/maplibre-gl.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-app-frame: #0B132B;
+  --navy-sidebar: #1C2541;
+  --navy-border: #2E3856;
+  --panel-bg: #FFFFFF;
+  --panel-subtle: #F8FAFC;
+  --panel-border: #E2E8F0;
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --text-subtle: #64748B;
+  --teal-accent: #0D9488;
+  --teal-accent-hover: #0F766E;
+  --teal-light: #F0FDFA;
+  --amber-alert: #D97706;
+  --amber-light: #FFFBEB;
+  --rose-loss: #E11D48;
+  --rose-light: #FFF1F2;
+}
+
+body {
+  background-color: var(--navy-app-frame);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom scrollbars for clean panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

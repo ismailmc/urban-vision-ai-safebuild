@@ -1,0 +1,26 @@
+[
+  {
+    "area": "bengaluru",
+    "bbox": [
+      77.754,
+      12.987,
+      77.764,
+      12.992
+    ],
+    "nodes": 2320,
+    "highway_ways": 101,
+    "status": "downloaded; raw geometry inspected only"
+  },
+  {
+    "area": "pune",
+    "bbox": [
+      73.92,
+      18.557,
+      73.93,
+      18.562
+    ],
+    "nodes": 6086,
+    "highway_ways": 227,
+    "status": "downloaded; raw geometry inspected only"
+  }
+]
