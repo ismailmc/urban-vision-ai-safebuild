@@ -140,9 +140,9 @@ export const BottomResultsPanel: React.FC<BottomResultsPanelProps> = ({
                 <div className="text-slate-700 font-mono">+{worstDetour} m (+28.5% route increase)</div>
               </div>
               <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl space-y-1">
-                <div className="text-[10px] font-bold uppercase tracking-wider text-amber-800">Statutory Clearance</div>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-amber-800">Authority Clearance</div>
                 <div className="text-slate-800 leading-relaxed">
-                  Status: <b>NO_VERIFIED_OPTION</b>. None of the reviewed mitigation candidates have secured formal traffic police approval.
+                  Status: <b>NO_VERIFIED_OPTION</b>. None of the reviewed mitigation candidates have secured formal authority clearance.
                 </div>
               </div>
             </div>

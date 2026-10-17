@@ -19,4 +19,4 @@ Updated after execution of automated test suites (`test_analytical_core.py` and 
 | RG-13 | Ranking Stability / Sensitivity | Toggling unverified assumptions re-evaluates candidate ranking; emits `RANKING_UNSTABLE` if ranking flips | PASSED | Sensitivity analysis evaluated. |
 | RG-14 | Guarded AI Assertion Integrity | Server-side assertion validator blocks ungrounded numeric values, causal leaps, or fabricated approvals | PASSED | `test_gate_14_ai_assertion_integrity` passed. Prohibited overreach claims intercepted. |
 | RG-15 | Offline Resilience | Complete application and deterministic analytics run without internet connection | PASSED | Tested with cached local Kakkanad XML tiles. |
-| RG-16 | Release Gate | Cannot claim `PILOT_READY` or `FIELD_PILOTED` without signed official municipal partnership | BLOCKED | Explicitly declared: Research Prototype only. |
+| RG-16 | Release Gate | Cannot claim `PILOT_READY` or `FIELD_PILOTED` without signed official operating partnership | BLOCKED | Explicitly declared: Research Prototype only. |

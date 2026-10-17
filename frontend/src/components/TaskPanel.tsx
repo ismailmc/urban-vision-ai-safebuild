@@ -539,7 +539,7 @@ export const TaskPanel: React.FC<TaskPanelProps> = ({
                       ? "Recovers arterial connectivity through the workzone, reducing average detour by up to 180 m."
                       : selectedCandidate.candidate_id === "cand_m2_civil_lane_diversion"
                       ? "Provides an authorized secondary bypass around congested intersection choke points."
-                      : "Provides no route improvement due to boundary wall obstruction."}
+                      : "Provides no route improvement due to private compound access restrictions."}
                   </div>
                 </div>
 
@@ -551,7 +551,7 @@ export const TaskPanel: React.FC<TaskPanelProps> = ({
                   </div>
                   <div className="text-[11px] text-rose-950 leading-snug">
                     {selectedCandidate.candidate_id === "cand_m1_phased_contraflow"
-                      ? "Narrows pedestrian sidewalk clear width below 1.5 m and increases worker exposure."
+                      ? "Reduces pedestrian walkway clearance and increases worker exposure in the workzone."
                       : selectedCandidate.candidate_id === "cand_m2_civil_lane_diversion"
                       ? "Directs vehicle cut-through traffic onto narrow residential streets."
                       : "Causes severe conflict with private compound security."}
@@ -579,9 +579,9 @@ export const TaskPanel: React.FC<TaskPanelProps> = ({
                   </div>
                 </div>
 
-                {/* Statutory Safeguard Gate */}
+                {/* Prototype Review Gate */}
                 <div className="p-2.5 bg-rose-100/70 border border-rose-300 rounded-lg text-[11px] text-rose-900 leading-relaxed font-medium">
-                  <b>Statutory Gate:</b> All candidates are currently marked <code>NO_VERIFIED_OPTION</code> because none possess signed traffic police sanction. The system will not recommend unverified options as formal advice.
+                  <b>Prototype Review Gate:</b> All candidates are currently marked <code>NO_VERIFIED_OPTION</code> because none possess verified authority approval. The system will not recommend unverified options as formal advice.
                 </div>
               </div>
             )}

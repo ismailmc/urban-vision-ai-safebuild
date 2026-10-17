@@ -16,7 +16,7 @@ SafeBuild evaluates how proposed infrastructure construction arrangements and ac
    - $G_0 + P + C$: Proposal under construction disruption.
    - $G_0 + P + C + M$: Proposal under construction with candidate mitigation.
 3. **Attribution Isolation**: Proposal effect $(G_0+P - G_0) = 0.0\text{ m}$ is preserved as an invariant when $P$ is identity.
-4. **Feasibility Hard Gate**: Candidates without verified physical review and confirmed statutory police permission remain labeled `UNVERIFIED` / `GRAPH_ONLY`. When no implementable option exists, the optimizer strictly emits `NO_VERIFIED_OPTION`.
+4. **Feasibility Hard Gate**: Candidates without verified physical review and confirmed authority permission remain labeled `UNVERIFIED` / `GRAPH_ONLY`. When no implementable option exists, the optimizer strictly emits `NO_VERIFIED_OPTION`.
 5. **Guarded Read-Only AI**: Server assertion filters intercept ungrounded numbers, causal leaps, or fabricated approvals prior to display.
 
 ---
@@ -70,17 +70,17 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 4. Primary Provisional Pilot: Kakkanad, Kochi
+## 4. Primary Research Study Area: Kakkanad Corridor Scenario Study
 - **Core Bounding Box**: `[76.335, 10.015, 76.355, 10.030]`
 - **Full Routing Buffer**: `[76.330, 10.010, 76.360, 10.035]`
 - **Nodes Parsed**: 19,582 nodes with 0 missing highway references
 - **Directed Road Edges**: 11,675 motor vehicle edges; 11,733 pedestrian edges
-- **Project Context**: Kochi Metro Rail Phase II (JLN Stadium to Infopark via Kakkanad)
+- **Project Context**: Kakkanad Corridor Scenario Study (Hypothetical Metro Viaduct Construction along Palarivattom–Kakkanad Road)
 - **Primary Facility Anchor**: Sunrise Hospital, Seaport-Airport Road (`fac_sunrise`)
 
 ---
 
 ## 5. Risk Gate & Release Status
 See [RISK_GATE_STATUS.md](file:///home/ismail/Documents/SEWA%20URBAN/RISK_GATE_STATUS.md) for individual verification logs across all 16 risk gates (RG-01 to RG-16).
-- **Current Operational Status**: Validated Research Prototype.
-- **Field Pilot Status**: `NOT_FIELD_PILOTED` (requires official signed municipal partnership).
+- **Readiness Declaration**: Working prototype tested using real Kakkanad geographic data and hypothetical construction scenarios; field validation and authority review pending.
+- **Pilot Status**: `NOT_FIELD_PILOTED` (academic research prototype; no municipal endorsement or deployment).

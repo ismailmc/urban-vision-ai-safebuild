@@ -12,7 +12,7 @@ from backend.core.study_definitions import STUDY_AREA_METADATA, FACILITIES, COMM
 
 app = FastAPI(
     title="Urban Vision AI — SafeBuild API",
-    description="Community-First Infrastructure Accessibility & Resilience Decision Engine",
+    description="Community-First Infrastructure Accessibility & Resilience Scenario Evaluation Tool",
     version="4.2.0"
 )
 
@@ -35,7 +35,7 @@ def health_check():
     return {
         "status": "healthy",
         "service": "SafeBuild Analytical Engine",
-        "pilot": STUDY_AREA_METADATA["name"],
+        "study_area": STUDY_AREA_METADATA["name"],
         "dataset_nodes": scenario_engine.osm_manifest["total_nodes"],
         "highway_edges_motor": len(scenario_engine.raw_edges["motor_vehicle"]),
         "ai_analyst_active": ai_analyst.is_available()
@@ -60,7 +60,7 @@ def get_roads_catalog():
 
 @app.get("/api/geography/buildings")
 def get_buildings():
-    """Returns GeoJSON FeatureCollection of authentic OSM building footprints with heights."""
+    """Returns GeoJSON FeatureCollection of OSM building footprints with tagged or estimated default heights."""
     features = scenario_engine.get_building_features()
     return {
         "type": "FeatureCollection",
@@ -191,7 +191,7 @@ def download_pdf(mode: str = Query("motor_vehicle")):
     return Response(
         content=pdf_bytes,
         media_type="application/pdf",
-        headers={"Content-Disposition": f"attachment; filename=safebuild_{mode}_decision_report.pdf"}
+        headers={"Content-Disposition": f"attachment; filename=safebuild_{mode}_scenario_report.pdf"}
     )
 
 @app.post("/api/ai/ask")

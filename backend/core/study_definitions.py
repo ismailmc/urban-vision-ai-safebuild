@@ -5,9 +5,9 @@ from typing import Dict, List, Any
 # Full routing buffer: [76.330, 10.010, 76.360, 10.035]
 
 STUDY_AREA_METADATA = {
-    "name": "Kakkanad Research Study Area",
+    "name": "Kakkanad Corridor Scenario Study Area",
     "region": "Kochi, Kerala, India",
-    "project_context": "Kochi Metro Rail Phase II Planning Context (JLN Stadium to Infopark via Kakkanad)",
+    "project_context": "Kakkanad Corridor Scenario Study (Hypothetical Metro Viaduct Construction on Palarivattom-Kakkanad Rd)",
     "scenario_label": "HYPOTHETICAL_CONSTRUCTION_ACCESS_REVIEW_ON_REAL_ROADS",
     "snapshot_date": "2026-10-12",
     "core_bbox": [76.335, 10.015, 76.355, 10.030],
@@ -119,7 +119,7 @@ CONSTRUCTION_DISRUPTIONS = [
         "direction": "both",
         "phase": "Pier Foundation Phase (Hypothetical)",
         "status": "HYPOTHETICAL_CONSTRUCTION_SCENARIO",
-        "authority_status": "KMRL_AIIB_PLANNING_CORRIDOR_HYPOTHETICAL_CLOSURE"
+        "scenario_status": "HYPOTHETICAL_CORRIDOR_CLOSURE_SCENARIO"
     }
 ]
 
@@ -131,13 +131,13 @@ CANDIDATE_INTERVENTIONS = [
         "description": "Preserve one lane of unidirectional managed vehicle flow through work-zone with flaggers and emergency priority.",
         "type": "operational_management",
         "cost_status": "UNKNOWN_CIVIL_ESTIMATE_NEEDED",
-        "permission_status": "UNVERIFIED_PENDING_TRAFFIC_POLICE_REVIEW",
-        "physical_status": "PHYSICALLY_FEASIBLE_EXISTING_CARRIAGEWAY",
+        "permission_status": "UNVERIFIED_MODEL_SCENARIO",
+        "physical_status": "PROVISIONAL_GEOMETRY_MODEL",
         "feasibility_tested": False,
         "restores_way_ids": ["197827530", "1011679138"],
         "speed_factor": 0.5,
         "conflict_pedestrian": True,
-        "reviewer": "Civil/Traffic Reviewer (Provisional)"
+        "reviewer": "Scenario Modeling Framework"
     },
     {
         "id": "cand_m2_civil_lane_diversion",
@@ -145,25 +145,25 @@ CANDIDATE_INTERVENTIONS = [
         "description": "Formalize Civil Lane Road (Way 867276513) with temporary signage, removing on-street parking to absorb diverted traffic.",
         "type": "rerouting_corridor",
         "cost_status": "LOW_SIGNAGE_ONLY",
-        "permission_status": "LOCAL_MUNICIPALITY_NOTIFIED_NOT_SANCTIONED",
-        "physical_status": "PHYSICALLY_AUDITED_RESIDENTIAL_ROAD",
+        "permission_status": "UNVERIFIED_MODEL_SCENARIO",
+        "physical_status": "OSM_MAPPED_RESIDENTIAL_ROAD",
         "feasibility_tested": False,
         "restores_way_ids": [],
         "adds_temporary_capacity_way_ids": ["867276513"],
         "conflict_pedestrian": False,
-        "reviewer": "Traffic Engineering Sub-team"
+        "reviewer": "Scenario Modeling Framework"
     },
     {
         "id": "cand_m3_unverified_private_easement",
-        "name": "Direct Infopark Boundary Compound Cut-Through",
+        "name": "Direct Campus Perimeter Cut-Through",
         "description": "Proposed unpaved connection through commercial campus perimeter.",
         "type": "new_unpaved_link",
         "cost_status": "UNKNOWN",
-        "permission_status": "PERMISSION_REJECTED_PRIVATE_CAMPUS",
-        "physical_status": "OBSTRUCTED_BY_PERIMETER_WALL",
+        "permission_status": "INELIGIBLE_PRIVATE_PROPERTY",
+        "physical_status": "DISCONTINUOUS_ALIGNMENT_NO_PUBLIC_RIGHT_OF_WAY",
         "feasibility_tested": False,
         "restores_way_ids": [],
         "conflict_pedestrian": True,
-        "reviewer": "Field Audit Unit"
+        "reviewer": "Scenario Modeling Framework"
     }
 ]

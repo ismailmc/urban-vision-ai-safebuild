@@ -2,18 +2,18 @@
 
 **Urban Vision AI — SafeBuild**  
 *“Plan roadwork. Keep communities connected.”*  
-**Corridor Pilot:** Kakkanad Metro Phase II Corridor (Sunrise Hospital Access)  
+**Study Corridor:** Kakkanad Corridor Scenario Study (Sunrise Hospital Access)  
 **Total Duration:** ~2 Minutes 30 Seconds  
 
 ---
 
 ## Demonstration Overview
 
-This script guides an evaluator, municipal planner, or reviewer through the live SafeBuild prototype. The workflow follows four clear, logical steps:
+This script guides an evaluator, urban planning researcher, or reviewer through the live SafeBuild prototype. The workflow follows four clear, logical steps:
 1. **Define Work:** Select a road corridor and configure a hypothetical restriction.
 2. **Check Access:** Compute deterministic routing detours to essential healthcare destinations.
-3. **Compare Arrangements:** Audit candidate construction sequences under strict statutory gates.
-4. **Export Plan:** Download auditable CSV data and tamper-evident PDF reports.
+3. **Compare Arrangements:** Audit candidate construction sequences under strict feasibility and prototype review gates.
+4. **Export Plan:** Download auditable CSV data and reproducible PDF scenario reports.
 
 ---
 
@@ -24,7 +24,7 @@ This script guides an evaluator, municipal planner, or reviewer through the live
 * **Click Action:** Click `Try the Kakkanad example` in the header or task workflow bar.
 * **Spoken Narration:**
   > “Welcome to SafeBuild. Major infrastructure works—like metro rail viaduct construction—often sever connections between neighborhoods and critical community destinations. Planners need to know: if this road is restricted during construction, how does community access change, and would another arrangement help?
-  > Here in the Kakkanad pilot corridor in Kochi, we are analyzing proposed metro construction along the Palarivattom–Kakkanad arterial, evaluating access to Sunrise Hospital from seven residential cluster anchors.”
+  > Here in the Kakkanad study corridor in Kochi, we evaluate a simulated construction restriction along the Palarivattom–Kakkanad arterial, evaluating modeled access to Sunrise Hospital from seven residential cluster anchors.”
 
 ---
 
@@ -62,13 +62,13 @@ This script guides an evaluator, municipal planner, or reviewer through the live
   1. Select `Single-Lane Managed Contraflow & Signal Priority` (Candidate M1).
   2. Click `Compare “Single-Lane...”`.
   3. Inspect the Tradeoff Review cards:
-     * **What Improves:** Recovers 174.5 m arterial access via flaggers.
-     * **What Worsens:** Sidewalk width narrowed below 1.5 m, creating pedestrian & worker exposure.
+     * **What Improves:** Recovers modeled arterial connectivity through the workzone, reducing average detour by up to 180 m.
+     * **What Worsens:** Reduces pedestrian walkway clearance and increases worker exposure in the workzone.
      * **What Stays Unchanged:** Eastern anchors remain unaffected.
-  4. Point to the amber statutory gate box: `STATUTORY GATE: NO_VERIFIED_OPTION`.
+  4. Point to the amber prototype review gate box: `PROTOTYPE REVIEW GATE: NO_VERIFIED_OPTION`.
 * **Spoken Narration:**
-  > “Now in Step 3, the planner asks: would another arrangement help? We compare candidate sequencing options. Arrangement B restores one managed lane through the workzone, reducing the detour by 174 meters. But look at the tradeoff: it compresses pedestrian sidewalks below 1.5 meters.
-  > Most importantly, look at the statutory gate: SafeBuild outputs `NO_VERIFIED_OPTION`. Under municipal law, no automated tool can grant formal clearance without signed approval from the Kerala State Traffic Police and KMRL safety inspectors. SafeBuild protects against false authority.”
+  > “Now in Step 3, the planner asks: would another arrangement help? We compare candidate sequencing options. Arrangement B restores one managed lane through the workzone, reducing modeled detour distance. But look at the tradeoff: it reduces available pedestrian space.
+  > Most importantly, look at the prototype review gate: SafeBuild outputs `NO_VERIFIED_OPTION`. The system refuses to recommend unverified interventions without documented physical clearance and verified authority permits. SafeBuild protects against unverified automated recommendations.”
 
 ---
 
@@ -76,6 +76,6 @@ This script guides an evaluator, municipal planner, or reviewer through the live
 * **Screen State:** Top navigation bar actions.
 * **Click Action:**
   1. Click `Evidence & Advanced` to open the full Provenance Inspector modal (showing Run ID, EPSG:4326/EPSG:32643 projections, checksums, and non-emergency disclaimers).
-  2. Close the modal, then click `Download Report` to obtain the official PDF decision report.
+  2. Close the modal, then click `Download Report` to obtain the PDF scenario report.
 * **Spoken Narration:**
-  > “Finally, every metric in SafeBuild is backed by a full provenance audit trail. With one click, planners can inspect dataset checksums or export an auditable PDF report ready for municipal review. SafeBuild plans roadwork while keeping communities connected.”
+  > “Finally, every metric in SafeBuild is backed by a full provenance audit trail. With one click, planners can inspect dataset checksums or export an auditable PDF report for planning review. SafeBuild plans roadwork while keeping communities connected.”

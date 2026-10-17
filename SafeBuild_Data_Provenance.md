@@ -9,7 +9,7 @@
 
 ## 1. Executive Summary & Attribution
 
-SafeBuild operates strictly on authentic geospatial data, verifiable infrastructure geometry, and field-checked municipal landmarks. All geographic road network elements, buildings, and topological intersections originate from OpenStreetMap (OSM) contributors and are provided under the Open Database License (ODbL) 1.0.
+SafeBuild operates strictly on authentic geospatial data, verifiable infrastructure geometry, and mapped public landmarks. All geographic road network elements, buildings, and topological intersections originate from OpenStreetMap (OSM) contributors and are provided under the Open Database License (ODbL) 1.0.
 
 > **OpenStreetMap Attribution:**  
 > Contains information from OpenStreetMap and OpenStreetMap Foundation, which is made available under the Open Database License (ODbL).  
@@ -20,8 +20,8 @@ SafeBuild operates strictly on authentic geospatial data, verifiable infrastruct
 ## 2. Spatial Coverage & Coordinate Reference Systems
 
 ### 2.1 Bounding Geometries
-* **Pilot Region:** Kakkanad, Kochi (Cochin), Ernakulam District, Kerala, India.
-* **Corridor Context:** Kochi Metro Rail Phase II (Pink Line) Construction Alignment along Palarivattom–Kakkanad Road.
+* **Study Region:** Kakkanad, Kochi (Cochin), Ernakulam District, Kerala, India.
+* **Corridor Context:** Palarivattom–Kakkanad Road Corridor (Representative Metro Construction Case Study).
 * **Core Bounding Box (WGS 84 / EPSG:4326):**
   * Minimum Longitude: `76.3262° E`
   * Minimum Latitude: `9.9934° N`
@@ -45,7 +45,7 @@ SafeBuild operates strictly on authentic geospatial data, verifiable infrastruct
 
 ## 3. Raw Data Artifacts & Cryptographic Checksums (SHA-256)
 
-The pilot highway network was harvested through Overpass API extractions across a 6-subbox tiled grid to guarantee 100% boundary overlap without boundary clipping artifacts:
+The study area highway network was harvested through Overpass API extractions across a 6-subbox tiled grid to guarantee 100% boundary overlap without boundary clipping artifacts:
 
 | File Artifact Path | Description & Scope | File Size | SHA-256 Cryptographic Checksum |
 | :--- | :--- | :--- | :--- |
@@ -73,7 +73,7 @@ The pilot highway network was harvested through Overpass API extractions across 
 * **Address:** Vii/528-B, Seaport - Airport Road, Thrikkakara, Kakkanad, Kochi, Kerala 682030.
 * **Operator Verification:** Verified active tertiary hospital with 24/7 accident & trauma emergency department.
 * **Ingress Access Node:** `lat: 10.0215, lon: 76.3478` (mapped to nearest curb node on Seaport-Airport Road).
-* **Access Classification:** Ground access surveyed entrance (marked `PROVISIONAL` pending formal municipal validation).
+* **Access Classification:** Ground access surveyed entrance (marked `PROVISIONAL` pending on-site verification).
 
 ### 4.2 Sampled Community Anchors (Origins)
 Centroids sampled from distinct residential clusters to ensure geographic equity:
@@ -104,7 +104,7 @@ Centroids sampled from distinct residential clusters to ensure geographic equity
 
 ## 6. Known Limitations & Scientific Safeguards
 
-1. **No Synthetic Populations:** SafeBuild does NOT synthesize resident census counts or trip volumes without registered municipal census tables. All impacts are reported in direct physical detour distance (meters) and percentage change.
+1. **No Synthetic Populations:** SafeBuild does NOT synthesize resident census counts or trip volumes without registered official census tables. All impacts are reported in direct physical detour distance (meters) and percentage change.
 2. **No Fictitious Emergency Seconds:** Ambulance travel times are NOT fabricated using arbitrary speed guesses. Turn delays and live signal delays are clearly marked outside static routing scope.
 3. **Planar Elevation:** Coastal Kochi topography is modeled as 2D planar elevation. Slope gradient impedance is not applied.
 4. **Turn Restrictions:** Micro-level signal turning bans (e.g. prohibited right turns during peak hours) are omitted unless explicitly tagged in OSM relations.

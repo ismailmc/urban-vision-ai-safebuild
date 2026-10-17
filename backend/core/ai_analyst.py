@@ -155,9 +155,9 @@ class SafeBuildGuardedAIAnalyst:
 
         if "why" in p_lower and ("qualify" in p_lower or "reject" in p_lower or "not" in p_lower):
             return (
-                f"Candidate alternatives did not qualify as implementable options because the system enforces a strict statutory safeguard. "
+                f"Candidate alternatives did not qualify as implementable options because the system enforces a strict prototype review gate. "
                 f"Status '{rec}' reflects that while alternatives such as contraflow or collector bypasses model mathematical detour reductions, "
-                f"none possess signed traffic police sanction, audited signal timing plans, or municipal engineering clearance. "
+                f"none possess verified authority clearance, audited signal timing plans, or independent field engineering review. "
                 f"SafeBuild prohibits presenting unverified routes as approved urban detours."
             )
         elif "kakkanad west" in p_lower:
@@ -177,6 +177,6 @@ class SafeBuildGuardedAIAnalyst:
                 f"modeled access to Sunrise Hospital undergoes an average detour of {avg} m across the 6 analyzed residential communities. "
                 f"The worst-affected community is '{w}', experiencing an additional modeled route distance of {w_d} m. "
                 f"In the alternatives evaluation, the recommendation status is '{rec}' because none of the reviewed candidates "
-                f"possess confirmed statutory traffic police permissions or physical site clearance. "
+                f"possess confirmed authority permissions or physical site clearance. "
                 f"These calculations reflect deterministic network shortest paths and do not represent observed ambulance response times."
             )

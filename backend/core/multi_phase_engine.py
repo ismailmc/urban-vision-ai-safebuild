@@ -165,7 +165,7 @@ class MultiPhaseEngine:
     def evaluate_work_arrangements(self, phases_data: List[Dict[str, Any]], mode: str = "motor_vehicle") -> Dict[str, Any]:
         """
         Bounded comparison of work arrangements (e.g., sequential vs staggered closures).
-        Evaluates candidate work arrangements against access constraints, duration limits and legal gates.
+        Evaluates candidate work arrangements against access constraints, duration limits and verification safeguards.
         """
         base_eval = self.analyze_phases(phases_data, mode=mode)
         if not base_eval["is_valid"]:
@@ -175,7 +175,7 @@ class MultiPhaseEngine:
                 "candidate_arrangements": []
             }
 
-        # Defined realistic candidate arrangements for the metro project
+        # Defined illustrative candidate arrangements for scenario comparison
         candidates = [
             {
                 "sequence_id": "seq_standard_sequential",
@@ -183,8 +183,8 @@ class MultiPhaseEngine:
                 "description": "Executes utility relocation, piling, and girder launching one phase at a time without overlapping road closures.",
                 "schedule_type": "sequential",
                 "staggered_offset_days": 0,
-                "physical_status": "PHYSICALLY_FEASIBLE_EXISTING_CARRIAGEWAY",
-                "permission_status": "PROPOSED_REQUIRES_AUTHORITY_APPROVAL",
+                "physical_status": "PROVISIONAL_GEOMETRY_MODEL",
+                "permission_status": "PROPOSED_UNVERIFIED",
                 "candidate_intervention_id": "cand_m2_civil_lane_diversion"
             },
             {
@@ -193,18 +193,18 @@ class MultiPhaseEngine:
                 "description": "Preserves managed single-lane corridor flow during foundation and girder phases with flagger coordination.",
                 "schedule_type": "sequential",
                 "staggered_offset_days": 0,
-                "physical_status": "PHYSICALLY_FEASIBLE_EXISTING_CARRIAGEWAY",
-                "permission_status": "UNVERIFIED_PENDING_TRAFFIC_POLICE_REVIEW",
+                "physical_status": "PROVISIONAL_GEOMETRY_MODEL",
+                "permission_status": "UNVERIFIED_MODEL_SCENARIO",
                 "candidate_intervention_id": "cand_m1_phased_contraflow"
             },
             {
                 "sequence_id": "seq_concurrent_fasttrack",
                 "name": "Arrangement C: Accelerated Concurrent Work (Unstaggered)",
-                "description": "Simultaneously closes multiple corridor reaches to shorten total duration, but severely compounds community detour exposure.",
+                "description": "Simultaneously closes multiple corridor reaches to shorten modeled duration, but severely compounds community detour exposure.",
                 "schedule_type": "concurrent",
                 "staggered_offset_days": 0,
-                "physical_status": "HIGH_CORRIDOR_CONGESTION_RISK",
-                "permission_status": "PERMISSION_REJECTED_TRAFFIC_POLICE",
+                "physical_status": "HIGH_NETWORK_DETOUR_CONCENTRATION",
+                "permission_status": "EXCLUDED_BY_MODEL_CONSTRAINTS",
                 "candidate_intervention_id": "cand_m3_unverified_private_easement"
             }
         ]
@@ -218,14 +218,14 @@ class MultiPhaseEngine:
             is_eligible = True
             ineligibility_reason = None
 
-            if "REJECTED" in perm or "OBSTRUCTED" in phys:
+            if "EXCLUDED" in perm or "REJECTED" in perm or "OBSTRUCTED" in phys:
                 is_eligible = False
-                ineligibility_reason = "Explicit statutory refusal by traffic police or physical roadway obstruction."
-                violations.append("Violation: Rejected by traffic authority due to safety/access thresholds.")
-            elif "APPROVAL" in perm or "PENDING" in perm or "UNVERIFIED" in perm:
+                ineligibility_reason = "Ineligible under the entered scenario constraints: physical access restriction or unmitigated network severance."
+                violations.append("Violation: Excluded under modeled safety and accessibility constraints.")
+            elif "APPROVAL" in perm or "PENDING" in perm or "UNVERIFIED" in perm or "PROPOSED" in perm:
                 is_eligible = False
-                ineligibility_reason = "Proposed candidate requires signed authority approval and verified safety staffing plan."
-                violations.append("Notice: Awaiting statutory sanction (NO_VERIFIED_OPTION).")
+                ineligibility_reason = "Proposed candidate is an unverified scenario requiring field verification and authority review."
+                violations.append("Notice: Awaiting authority review and safety verification (NO_VERIFIED_OPTION).")
 
             # Compute impacts across phases
             total_exposure_days = 0.0
@@ -238,21 +238,24 @@ class MultiPhaseEngine:
                     worst_detour_m = p_res["summary"]["worst_detour_m"]
                 disconnection_count += p_res["summary"]["new_unreachable_origins"]
 
+            # Note on 0.65 factor: In Arrangement C, a concurrent overlapping schedule is modeled with an illustrative 35% overall duration reduction (0.65 multiplier), assuming parallel reach execution.
+            overall_days = base_eval["total_project_duration_days"] if cand["schedule_type"] == "sequential" else round(base_eval["total_project_duration_days"] * 0.65, 1)
+
             evaluated.append({
                 "sequence_id": cand["sequence_id"],
                 "name": cand["name"],
                 "description": cand["description"],
                 "schedule_type": cand["schedule_type"],
-                "overall_project_duration_days": base_eval["total_project_duration_days"] if cand["schedule_type"] == "sequential" else round(base_eval["total_project_duration_days"] * 0.65, 1),
+                "overall_project_duration_days": overall_days,
                 "worst_modeled_detour_m": worst_detour_m,
                 "disconnection_count": disconnection_count,
                 "is_eligible": is_eligible,
                 "ineligibility_reason": ineligibility_reason,
                 "violations": violations,
                 "remaining_checks": [
-                    "Joint site survey with Kerala State Traffic Police",
-                    "KMRL civil construction contractor safety sign-off",
-                    "Emergency vehicle priority lane certification"
+                    "Local traffic authority field review and route clearance",
+                    "Construction contractor workzone traffic control sign-off",
+                    "Emergency service access consultation"
                 ],
                 "physical_status": phys,
                 "permission_status": perm
@@ -261,8 +264,8 @@ class MultiPhaseEngine:
         return {
             "is_valid": True,
             "evaluated_candidate_count": len(evaluated),
-            "search_limitations": "Bounded finite comparison over 3 statutory sequencing candidates.",
+            "search_limitations": "Bounded finite comparison over 3 illustrative sequencing arrangements.",
             "recommended_status": "NO_VERIFIED_OPTION",
-            "recommendation_note": "All candidates are currently marked 'Proposed — requires authority approval'. No option has received formal traffic police clearance.",
+            "recommendation_note": "All candidates are unverified model scenarios. None have received formal clearance or field validation.",
             "candidate_arrangements": evaluated
         }

@@ -14,8 +14,8 @@ def generate_csv_report(scenario_data: Dict[str, Any], phases_data: Optional[Dic
     writer = csv.writer(output)
 
     # Header metadata comments
-    writer.writerow(["# SafeBuild Construction Access Planning Brief", "Kakkanad Research Study Area"])
-    writer.writerow(["# Status", "PROPOSED — REQUIRES AUTHORITY APPROVAL"])
+    writer.writerow(["# SafeBuild Construction Access Planning Brief", "Kakkanad Corridor Scenario Study Area"])
+    writer.writerow(["# Status", "PROVISIONAL SCENARIO MODEL — UNVERIFIED"])
     writer.writerow(["# Run ID", scenario_data.get("run_id", "N/A")])
     writer.writerow(["# Snapshot Date", scenario_data["metadata"]["snapshot_date"]])
     writer.writerow(["# Analysis Timestamp", datetime.datetime.now(datetime.timezone.utc).isoformat()])
@@ -53,7 +53,7 @@ def generate_csv_report(scenario_data: Dict[str, Any], phases_data: Optional[Dic
     return output.getvalue()
 
 def generate_pdf_report(scenario_data: Dict[str, Any], optimizer_data: Dict[str, Any], filepath: str, phases_data: Optional[Dict[str, Any]] = None):
-    """Generates a structured, professional multi-page PDF decision document matching live analytics and statutory safeguards."""
+    """Generates a structured multi-page PDF scenario report matching model calculations and verification safeguards."""
     doc = SimpleDocTemplate(filepath, pagesize=letter, rightMargin=36, leftMargin=36, topMargin=36, bottomMargin=36)
     styles = getSampleStyleSheet()
 
@@ -107,8 +107,8 @@ def generate_pdf_report(scenario_data: Dict[str, Any], optimizer_data: Dict[str,
 
     # Title & Header
     story.append(Paragraph("URBAN VISION AI — SAFEBUILD", title_style))
-    story.append(Paragraph("Construction Access Review & Phase Decision Brief | SFIC 2026", subtitle_style))
-    story.append(Paragraph("STATUS: PROPOSED — REQUIRES AUTHORITY APPROVAL (DRAFT REVIEW)", badge_style))
+    story.append(Paragraph("Construction Access Review & Phase Scenario Brief | SFIC 2026", subtitle_style))
+    story.append(Paragraph("STATUS: PROVISIONAL SCENARIO MODEL — UNVERIFIED (PLANNING EVALUATION ONLY)", badge_style))
     story.append(Spacer(1, 8))
 
     # Provenance & Metadata Box
@@ -173,7 +173,7 @@ def generate_pdf_report(scenario_data: Dict[str, Any], optimizer_data: Dict[str,
     story.append(Paragraph("2. Bounded Comparison of Work Arrangements", section_style))
     opt_text = f"""
     <b>Optimization Gate:</b> <b>{optimizer_data['recommended_status']}</b><br/>
-    <b>Statutory Note:</b> {optimizer_data['recommendation_note']}
+    <b>Verification Note:</b> {optimizer_data['recommendation_note']}
     """
     story.append(Paragraph(opt_text, alert_style))
     story.append(Spacer(1, 6))
@@ -205,10 +205,10 @@ def generate_pdf_report(scenario_data: Dict[str, Any], optimizer_data: Dict[str,
     story.append(Paragraph("3. Scientific Truth Safeguards & Audit Trail", section_style))
     caveats = """
     • <b>Non-Emergency Claim:</b> Detour distances are deterministic graph computations and do not represent observed ambulance response times, traffic congestion, or live travel speeds.<br/>
-    • <b>Unverified Permissions:</b> No reviewed candidate has been granted statutory police or municipal road opening permissions. The system deliberately refrains from marking them implementable.<br/>
+    • <b>Unverified Status:</b> No reviewed candidate has undergone field verification or authority review. The system deliberately refrains from marking them implementable.<br/>
     • <b>Community Privacy:</b> Sampled points represent geographic road-side access anchors, NOT counted residential populations.<br/>
     • <b>Data Source:</b> OpenStreetMap contributors (ODbL). Snapshot downloaded 2026-10-12 across 19,582 nodes with complete referential topology.<br/>
-    • <b>Validity Period:</b> Valid for scenario planning review only. Field execution strictly requires approved traffic police diversion plans.
+    • <b>Validity Scope:</b> Valid for scenario planning review only. Field execution requires formal traffic management design and stakeholder consultation.
     """
     story.append(Paragraph(caveats, body_style))
 

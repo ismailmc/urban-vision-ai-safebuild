@@ -9,15 +9,23 @@ async function captureEvidence() {
   const browser = await puppeteer.launch({
     executablePath: '/usr/bin/google-chrome',
     headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--use-gl=angle', '--use-angle=swiftshader', '--enable-webgl', '--ignore-gpu-blocklist']
   });
 
   const page = await browser.newPage();
   await page.setViewport({ width: 1440, height: 900 });
 
-  console.log("Navigating to http://localhost:3000/ with domcontentloaded...");
-  await page.goto('http://localhost:3000/', { waitUntil: 'domcontentloaded', timeout: 15000 });
-  await new Promise(r => setTimeout(r, 4000));
+  console.log("Navigating to http://localhost:3000/...");
+  await page.goto('http://localhost:3000/', { waitUntil: 'networkidle0', timeout: 30000 });
+  await page.waitForSelector('.maplibregl-canvas', { timeout: 15000 }).catch(() => console.log('Canvas wait timeout, continuing'));
+
+  // Click "Try the Kakkanad example" to populate the model
+  await page.evaluate(() => {
+    const btns = Array.from(document.querySelectorAll('button'));
+    const btn = btns.find(b => b.textContent && b.textContent.includes('Try the Kakkanad example') || b.textContent.includes('Try Kakkanad example'));
+    if (btn) btn.click();
+  });
+  await new Promise(r => setTimeout(r, 3000));
 
   // 1. Step 1: Road screen
   await page.screenshot({ path: path.join(outDir, '01_step1_road_selection.png') });
@@ -26,7 +34,7 @@ async function captureEvidence() {
   // 2. Click Step 2: Access
   await page.evaluate(() => {
     const btns = Array.from(document.querySelectorAll('button'));
-    const btn = btns.find(b => b.textContent && b.textContent.includes('2. Access'));
+    const btn = btns.find(b => b.textContent && b.textContent.trim().includes('2. Access'));
     if (btn) btn.click();
   });
   await new Promise(r => setTimeout(r, 2000));
@@ -36,7 +44,7 @@ async function captureEvidence() {
   // 3. Click Step 3: Compare
   await page.evaluate(() => {
     const btns = Array.from(document.querySelectorAll('button'));
-    const btn = btns.find(b => b.textContent && b.textContent.includes('3. Compare'));
+    const btn = btns.find(b => b.textContent && b.textContent.trim().includes('3. Compare'));
     if (btn) btn.click();
   });
   await new Promise(r => setTimeout(r, 2000));

@@ -122,11 +122,11 @@ export const ContextDrawer: React.FC<ContextDrawerProps> = ({
             <div className="flex justify-between">
               <span className="text-slate-500">Pedestrian Conflict:</span>
               <span className={content.data.conflict_pedestrian ? "text-rose-600 font-bold" : "text-slate-700"}>
-                {content.data.conflict_pedestrian ? "YES (Sidewalk Compressed)" : "None"}
+                {content.data.conflict_pedestrian ? "YES (Pedestrian Space Reduced)" : "None"}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Statutory Permission:</span>
+              <span className="text-slate-500">Authority Permission:</span>
               <span className="font-mono text-[10px] text-amber-800 font-semibold">{content.data.permission_status}</span>
             </div>
           </div>

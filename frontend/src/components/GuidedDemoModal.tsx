@@ -71,7 +71,7 @@ export const GuidedDemoModal: React.FC<GuidedDemoModalProps> = ({
       stepNum: 4,
       tab: "alternatives" as StudioTab,
       title: "Step 4: Compare Candidate Alternatives Safely",
-      body: "We review candidate arrangements like contraflow (M1). While contraflow mathematically recovers detour distance, it compresses pedestrian sidewalk width and lacks statutory police permits. The optimizer safely returns 'NO_VERIFIED_OPTION'.",
+      body: "We review candidate arrangements like contraflow (M1). While contraflow mathematically recovers detour distance, it compresses pedestrian space and lacks formal authority clearance. The optimizer safely returns 'NO_VERIFIED_OPTION'.",
       highlightControl: "Alternatives Ledger: Candidate Cards & Mode Conflict Warnings",
       icon: <Sliders className="w-5 h-5 text-indigo-600" />,
       action: () => {
@@ -83,7 +83,7 @@ export const GuidedDemoModal: React.FC<GuidedDemoModalProps> = ({
       stepNum: 5,
       tab: "summary" as StudioTab,
       title: "Step 5: Decision Summary & Guarded Intelligence",
-      body: "Review the comprehensive trade-off brief, query the guarded AI analyst with context-aware prompts, and export defensible PDF and CSV reports for municipal stakeholders without fabricated claims.",
+      body: "Review the comprehensive trade-off brief, query the guarded AI analyst with context-aware prompts, and export defensible PDF and CSV reports for planning review without fabricated claims.",
       highlightControl: "Decision Brief: Tradeoffs, Guarded AI, and PDF/CSV Export",
       icon: <FileText className="w-5 h-5 text-teal-700" />,
       action: () => {

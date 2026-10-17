@@ -124,12 +124,12 @@ class TestMultiPhaseAnalysis(unittest.TestCase):
                 self.assertIn("baseline_unreachable", orig)
                 self.assertFalse(orig["is_disconnected_by_construction"])
 
-    def test_bounded_arrangements_statutory_safeguard(self):
-        """Verify candidate work arrangements respect NO_VERIFIED_OPTION statutory safeguard."""
+    def test_bounded_arrangements_prototype_review_gate(self):
+        """Verify candidate work arrangements respect NO_VERIFIED_OPTION prototype review gate."""
         res = self.engine.evaluate_work_arrangements(DEFAULT_CONSTRUCTION_PHASES, mode="motor_vehicle")
         self.assertTrue(res["is_valid"])
         self.assertEqual(res["recommended_status"], "NO_VERIFIED_OPTION")
-        self.assertIn("requires authority approval", res["recommendation_note"])
+        self.assertIn("unverified model scenarios", res["recommendation_note"])
         
         candidates = res["candidate_arrangements"]
         self.assertTrue(len(candidates) >= 3)
@@ -138,7 +138,7 @@ class TestMultiPhaseAnalysis(unittest.TestCase):
             self.assertIn("overall_project_duration_days", c)
             self.assertIn("worst_modeled_detour_m", c)
             self.assertIn("is_eligible", c)
-            self.assertFalse(c["is_eligible"]) # None are currently eligible due to statutory gate
+            self.assertFalse(c["is_eligible"]) # None are currently eligible without verification
             self.assertIn("violations", c)
             self.assertIn("remaining_checks", c)
 

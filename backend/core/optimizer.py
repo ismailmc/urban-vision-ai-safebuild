@@ -42,10 +42,10 @@ class InterventionOptimizer:
             perm_status = cand["permission_status"]
             phys_status = cand["physical_status"]
             
-            if "REJECTED" in perm_status or "OBSTRUCTED" in phys_status:
+            if "REJECTED" in perm_status or "INELIGIBLE" in perm_status or "OBSTRUCTED" in phys_status or "DISCONTINUOUS" in phys_status:
                 feasibility_class = "REJECTED_UNFEASIBLE"
                 is_eligible_for_recommendation = False
-                rejection_reason = "Physical obstruction or explicit private property denial."
+                rejection_reason = "Ineligible under entered scenario constraints: private property alignment or discontinuous public right-of-way."
             elif "PERMISSION_CONFIRMED" in perm_status:
                 feasibility_class = "VERIFIED_IMPLEMENTABLE"
                 is_eligible_for_recommendation = True
@@ -53,7 +53,7 @@ class InterventionOptimizer:
             else:
                 feasibility_class = "GRAPH_ONLY_UNVERIFIED"
                 is_eligible_for_recommendation = False
-                rejection_reason = "Lacks formal traffic police / municipal sanction and safety staffing BOQ."
+                rejection_reason = "Unverified scenario candidate lacking field validation and authority review."
 
             evaluations.append({
                 "candidate_id": cid,
@@ -87,7 +87,7 @@ class InterventionOptimizer:
         if not eligible_candidates:
             recommended_status = "NO_VERIFIED_OPTION"
             recommended_candidate = None
-            recommendation_note = "All reviewed candidates lack verified statutory permission or physical clearance. System refuses to present unverified options as actionable advice."
+            recommendation_note = "All reviewed candidates are unverified model scenarios. SafeBuild does not present unverified routes as actionable advice."
         else:
             recommended_status = "CANDIDATE_SELECTED"
             recommended_candidate = min(

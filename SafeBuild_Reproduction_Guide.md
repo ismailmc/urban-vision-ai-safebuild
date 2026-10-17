@@ -53,7 +53,7 @@ cd ..
 
 ## 3. Running Automated Validation Tests
 
-SafeBuild includes an automated validation suite verifying all 17 analytical invariants, circular dependency detection, multi-phase calculations, and statutory gates:
+SafeBuild includes an automated validation suite verifying all 17 analytical invariants, circular dependency detection, multi-phase calculations, and prototype review gates:
 
 ```bash
 # Run the complete test suite

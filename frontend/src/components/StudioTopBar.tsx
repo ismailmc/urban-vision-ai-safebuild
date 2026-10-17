@@ -39,7 +39,7 @@ export const StudioTopBar: React.FC<StudioTopBarProps> = ({
                 Construction Access Review
               </span>
               <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold">
-                Kakkanad Pilot
+                Kakkanad Scenario Study
               </span>
             </div>
             <div className="text-[10px] text-slate-500 hidden md:block">

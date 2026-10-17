@@ -74,7 +74,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onExplore, onStartDemo
           <div className="lg:col-span-5 space-y-5 sm:space-y-6">
             <div className="inline-flex items-center space-x-2 px-3 py-1 sm:px-3.5 sm:py-1.5 bg-[#1C2541] border border-[#2E3856] rounded-full text-xs font-semibold text-teal-300">
               <ShieldCheck className="w-4 h-4 text-teal-400 shrink-0" />
-              <span>SFIC 2026 — Track A | Kakkanad Pilot</span>
+              <span>SFIC 2026 — Track A | Kakkanad Scenario Study</span>
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-black tracking-tight text-white leading-[1.14]">
@@ -103,7 +103,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onExplore, onStartDemo
             </div>
 
             <div className="pt-3 border-t border-[#2E3856]/60 text-xs text-slate-400 space-y-1">
-              <div>• <b>Pilot Corridor:</b> Kakkanad, Kochi (Palarivattom-Kakkanad Rd Metro Phase II)</div>
+              <div>• <b>Study Corridor:</b> Kakkanad, Kochi (Palarivattom-Kakkanad Rd Case Study)</div>
               <div>• <b>Network Scope:</b> 19,582 nodes, 11,675 directed edges (OpenStreetMap ODbL)</div>
             </div>
           </div>
@@ -237,7 +237,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onExplore, onStartDemo
                 <span>Compare alternatives</span>
               </div>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Evaluate candidate interventions against physical review, statutory permissions, and pedestrian mode conflicts.
+                Evaluate candidate interventions against physical review, authority permissions, and pedestrian mode conflicts.
               </p>
             </div>
           </div>
@@ -247,8 +247,8 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onExplore, onStartDemo
       {/* 4. Footer */}
       <footer className="border-t border-[#2E3856] bg-[#070D1E] py-8">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
-          <div>OpenStreetMap Contributors (ODbL) | Kochi Metro Rail Phase II Planning Corridor (AIIB / KMRL)</div>
-          <div>Research prototype. Not an approved municipal deployment.</div>
+          <div>OpenStreetMap Contributors (ODbL) | Palarivattom–Kakkanad Road Corridor Research Case Study</div>
+          <div>Research prototype for academic evaluation. Not an approved operational deployment.</div>
         </div>
       </footer>
     </div>

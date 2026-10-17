@@ -177,7 +177,7 @@ export const EvidenceInspector: React.FC<EvidenceInspectorProps> = ({
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-600">Statutory Permission:</span>
+                  <span className="text-slate-600">Authority Permission:</span>
                   <span className="text-slate-800 font-medium">{candidate.permission_status}</span>
                 </div>
                 <div className="flex justify-between items-center">
@@ -208,7 +208,7 @@ export const EvidenceInspector: React.FC<EvidenceInspectorProps> = ({
               </div>
 
               <div className="p-2 bg-amber-50 border border-amber-200 rounded text-amber-900 text-[11px]">
-                <b>Global Decision Status: NO_VERIFIED_OPTION.</b> System strictly refuses to fabricate an approved alternative when statutory police permissions are unverified.
+                <b>Global Decision Status: NO_VERIFIED_OPTION.</b> System strictly refuses to fabricate an approved alternative when formal authority permissions are unverified.
               </div>
             </>
           )}

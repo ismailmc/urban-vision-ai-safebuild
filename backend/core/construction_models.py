@@ -13,7 +13,7 @@ class ConstructionPhase(BaseModel):
     target_way_ids: List[str] = Field(default_factory=list, description="Roadway OSM way IDs restricted in this phase")
     direction: str = Field("both", description="Restriction direction: 'both', 'fwd_only', 'rev_only'")
     mode: str = Field("motor_vehicle", description="Restricted mode: 'motor_vehicle' or 'pedestrian'")
-    status: str = Field("PROPOSED_UNVERIFIED", description="Authority status")
+    status: str = Field("PROPOSED_UNVERIFIED", description="Scenario verification status")
 
 class WorkArrangementSequence(BaseModel):
     sequence_id: str

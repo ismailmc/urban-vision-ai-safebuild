@@ -455,7 +455,7 @@ export const StudioSidePanel: React.FC<StudioSidePanelProps> = ({
             <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-2">
               <div className="font-bold text-slate-800">Candidate Interventions Ledger</div>
               <p className="text-slate-500 leading-relaxed">
-                Compare candidate engineering arrangements. Unapproved candidates can be explored in simulation, but are strictly held to statutory verification safeguards.
+                Compare candidate engineering arrangements. Unapproved candidates can be explored in simulation, but are strictly held to prototype verification safeguards.
               </p>
               
               {/* Category Segmented Control */}
@@ -468,7 +468,7 @@ export const StudioSidePanel: React.FC<StudioSidePanelProps> = ({
                 <button
                   onClick={() => onOpenEvidenceModal()}
                   className="py-1.5 px-2 bg-white hover:bg-slate-100 border border-slate-200 text-slate-600 rounded-lg text-[11px] font-semibold text-center"
-                  title="View statutory verification requirements"
+                  title="View prototype verification requirements"
                 >
                   Verified Implementable Options (0)
                 </button>
@@ -508,7 +508,7 @@ export const StudioSidePanel: React.FC<StudioSidePanelProps> = ({
                     {c.conflict_pedestrian && (
                       <div className="mt-2 p-2 bg-rose-50 border border-rose-200 rounded text-rose-800 text-[11px] flex items-center space-x-1.5">
                         <AlertTriangle className="w-3.5 h-3.5 shrink-0 text-rose-600" />
-                        <span>Pedestrian Conflict: Sidewalk width reduced. Mode conflict identified.</span>
+                        <span>Pedestrian Conflict: Walkway clearance reduced. Mode conflict identified.</span>
                       </div>
                     )}
                   </div>
@@ -516,14 +516,14 @@ export const StudioSidePanel: React.FC<StudioSidePanelProps> = ({
               })}
             </div>
 
-            {/* Strict Statutory Rejection Notice */}
+            {/* Strict Prototype Feasibility Review Notice */}
             <div className="p-3.5 bg-amber-50 border border-amber-200 rounded-xl text-amber-900 space-y-1 leading-relaxed">
               <div className="font-bold flex items-center space-x-1.5">
                 <AlertTriangle className="w-4 h-4 text-amber-700" />
                 <span>Global Feasibility: NO_VERIFIED_OPTION</span>
               </div>
               <p>
-                Candidate arrangements can be modeled, but none possess confirmed statutory traffic police clearance or safety staffing BOQ. The system strictly refuses to display unverified candidates as actionable advice.
+                Candidate arrangements can be modeled, but none possess confirmed authority clearance or safety staffing plans. The system strictly refuses to display unverified candidates as actionable advice.
               </p>
             </div>
 
@@ -552,7 +552,7 @@ export const StudioSidePanel: React.FC<StudioSidePanelProps> = ({
               <div className="space-y-1 text-slate-600">
                 <div>• Worst Affected: <b>{summary?.worst_affected_origin}</b> (+{summary?.worst_detour_m} m detour)</div>
                 <div>• Average Detour: <b>+{summary?.average_detour_m} m</b> across 6 sampled anchors</div>
-                <div>• Tradeoff: Contraflow alternatives recover road distance but compress pedestrian sidewalks and lack traffic police sanction</div>
+                <div>• Tradeoff: Contraflow alternatives recover road distance but compress pedestrian space and lack formal authority clearance</div>
               </div>
             </div>
 
@@ -656,7 +656,7 @@ export const StudioSidePanel: React.FC<StudioSidePanelProps> = ({
                 Open Evidence
               </button>
             </div>
-            <div>• Study Area: {metadata?.name || "Kakkanad Pilot"} ({metadata?.snapshot_date || "ODbL"})</div>
+            <div>• Study Area: {metadata?.name || "Kakkanad Corridor Scenario Study"} ({metadata?.snapshot_date || "ODbL"})</div>
             <div className="flex items-center space-x-2 pt-1 border-t border-slate-800">
               <span>• Graph State:</span>
               {(["G0", "G0_C", "G0_P_C_M"] as AnalyticalState[]).map(st => (
